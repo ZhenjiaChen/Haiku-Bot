@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Mar 31 13:17:27 2018
-
-@author: Zhenjia
-"""
-
 import string
 import praw
 import config
@@ -22,7 +14,7 @@ def bot_login():
                          password = config.password,
                          client_id = config.client_id,
                          client_secret = config.client_secret,
-                         user_agent = "Haiku Bot v0.1")
+                         user_agent = "User Agent")
     return reddit
 
 def run_bot(r, comment_list):
@@ -174,24 +166,3 @@ comments_replied_to = get_saved_comments()
 
 while True:
     run_bot(reddit, comments_replied_to)
-
-#-----------------------------
-
-#temp_id = "dwvjn9e"
-#comment = reddit.comment(id = temp_id)
-#body = comment.body
-
-# Haiku
-test_haiku = "Humble lines 'of'     \"code searching The  Reddit    comments It's spamming haiku"
-
-# Too many syllables
-test_haiku2 = "I am first with five! Then seven, in the middle. Five again to end me?"
-
-# Too many words
-test_haiku3 = "I am first with five Then seven in the middle Five again to end me from the land"
-
-# Syllables not align
-test_haiku4 = "I am first with quiet Then seven in the middle Five again to"
-
-# Unknown word
-test_haiku5 = "I ajdkfm first with quiet Then seven in the middle Five again to"
